@@ -1,0 +1,78 @@
+{
+	"family": "Ubuntu",
+	"subfamilies": [
+		{
+			"basename": "Ubuntu-Regular",
+			"formats" : [
+				"woff2",
+				"ttf"
+			],
+			"style": "normal",
+			"range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+			"weight": 400
+		},
+		{
+			"basename": "Ubuntu-Italic",
+			"formats" : [
+				"ttf"
+			],
+			"style": "italic",
+			"range": "",
+			"weight": 400
+		},
+		{
+			"basename": "Ubuntu-Light",
+			"formats" : [
+				"ttf"
+			],
+			"style": "light",
+			"range": "",
+			"weight": 400
+		},
+		{
+			"basename": "Ubuntu-LightItalic",
+			"formats" : [
+				"ttf"
+			],
+			"style": "lightitalic",
+			"range": "",
+			"weight": 400
+		},
+		{
+			"basename": "Ubuntu-Medium",
+			"formats" : [
+				"ttf"
+			],
+			"style": "medium",
+			"range": "",
+			"weight": 400
+		},
+		{
+			"basename": "Ubuntu-MediumItalic",
+			"formats" : [
+				"ttf"
+			],
+			"style": "mediumitalic",
+			"range": "",
+			"weight": 400
+		},
+		{
+			"basename": "Ubuntu-Bold",
+			"formats" : [
+				"ttf"
+			],
+			"style": "normal",
+			"range": "",
+			"weight": 700
+		},
+		{
+			"basename": "Ubuntu-BoldItalic",
+			"formats" : [
+				"ttf"
+			],
+			"style": "italic",
+			"range": "",
+			"weight": 700
+		}
+	]
+}

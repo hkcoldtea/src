@@ -1,0 +1,17 @@
+{
+	"family": "glyphicons-halflings",
+	"subfamilies": [
+		{
+			"basename": "glyphicons-halflings-regular",
+			"formats" : [
+				"eot",
+				"svg",
+				"woff",
+				"woff2",
+				"ttf"
+			],
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

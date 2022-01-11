@@ -1,0 +1,36 @@
+/* footer */
+@import url(http://lifebook.hkcoldtea.com/css?family=Ubuntu:700&format=ttf);
+
+.footer {
+  clear : both;
+  font-family : 'Ubuntu', Bold;
+  color : #3EB3CA;
+  font-size : 16px;
+  line-height : 150%;
+  margin : 25px auto 0px auto;
+  padding-top : 15px;
+  padding-bottom : 5px;
+  text-align : center;
+  border-top : 1px solid #C0C0C0;
+}
+
+.footer a {
+  margin : 0px 5px;
+  text-decoration : none;
+}
+
+.footer a:hover {
+  text-decoration : underline;
+}
+
+.footer .copyright {
+  margin-top : 5px;
+  font-family : 'Ubuntu';
+  font-size : 18px;
+}
+
+.footer .info {
+  font-size : 16px;
+  padding : 1px 0px 0px 22px;
+}
+/* footer */

@@ -1,0 +1,18 @@
+@charset 'utf-8';
+{{range .}}@font-face {
+	font-family: '{{.Family}}';
+	{{- if .Base64Data}}
+	src: url(data:{{.MimeType}};charset=utf-8;base64,{{.Base64Data}}) format('opentype');
+	{{else}}
+	src: url('{{.Url}}') format('opentype');
+	{{- end}}
+	{{- if .Display}}
+	font-display: swap;
+	{{- end}}
+	font-style: {{.Style}};
+	font-weight: {{.Weight}};
+	{{- if .Range}}
+	unicode-range: {{.Range}};
+	{{- end}}
+}
+{{end}}
