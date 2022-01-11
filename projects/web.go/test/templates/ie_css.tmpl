@@ -1,0 +1,9 @@
+{{define "ie_css"}}
+{{htmlSafe "<!--[if lt IE 6]>"}}
+    <link href="$config.static/css/ie.css" rel="stylesheet" type="text/css" />
+{{htmlSafe "<![endif]-->"}}
+
+{{htmlSafe "<!--[if lt IE 7]>"}}
+    <link href="$config.static/css/ie6.css" rel="stylesheet" type="text/css" />
+{{htmlSafe "<![endif]-->"}}
+{{end}}

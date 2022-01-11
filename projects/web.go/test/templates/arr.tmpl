@@ -1,0 +1,16 @@
+<!doctype html>
+<head>
+{{template "ie_css" .}}
+</head>
+{{define "T"}}
+Hello, { {.}}!
+{{end}}
+<html>
+<!-- templates/arr.tmpl -->
+<body>
+    <p>hello, {{.title}}</p>
+    {{range $index, $ele := .stuArr }}
+    <p>{{ $index }}: {{ $ele.Name }} is {{ $ele.Age }} years old</p>
+    {{ end }}
+</body>
+</html>
