@@ -94,10 +94,12 @@ func (c *Context) HTML(code int, uri string, data interface{}) {
 
 func (c *Context) Redirect(uri string) {
 	http.Redirect(c.Writer, c.Req, uri, http.StatusSeeOther)
+	c.StatusCode = http.StatusSeeOther
 }
 
 func (c *Context) MethodNotAllowed() {
 	http.Error(c.Writer, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
+	c.StatusCode = http.StatusMethodNotAllowed
 }
 
 func (c *Context) ParseFiles(code int, files []string, data interface{}) {
@@ -116,6 +118,14 @@ func (c *Context) ParseFiles(code int, files []string, data interface{}) {
 func (c *Context) Param(key string) string {
 	value, _ := c.PathParams[key]
 	return value
+}
+
+func (c *Context) ExecuteInOrder(mid ...func(*Context)) {
+	for _, m := range mid {
+		if c.StatusCode <= 0 {
+			m(c)
+		}
+	}
 }
 
 func (c *Context) Shutdown() {

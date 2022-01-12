@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 
@@ -108,8 +109,38 @@ func main() {
 	})
 
 	s.Post("/stop", func(c *server.Context) {
-		c.Shutdown()
+		c.ExecuteInOrder(PreProcess, AProcess, PostProcess)
+		if c.StatusCode < 100 {
+			c.Shutdown()
+		}
 	})
 
 	s.Run("localhost:9999")
+}
+
+func PreProcess(c *server.Context) {
+	c.SetHeader("X-Header-A", "PreProcess")
+	username := c.GetPostValue("username")
+	if username == "" || username != os.Getenv("USER") {
+		c.String(302, "missing data")
+	}
+}
+
+func AProcess(c *server.Context) {
+	username := os.Getenv("USER")
+	password := c.GetPostValue("password")
+	if username != "" && password != "" {
+		res := util.PamAuthenticate(username, password)
+		if res > 0 {
+			return
+		}
+		c.String(404, "Not found")
+		return
+	} else {
+		c.String(302, "missing data")
+	}
+}
+
+func PostProcess(c *server.Context) {
+	c.SetHeader("X-Header-B", "PostProcess")
 }
