@@ -60,7 +60,10 @@ func main() {
 		case "mp4":
 			f64Val, imghash = handle_video(filename)
 		case "gif":
-			fallthrough
+			f64Val, imghash = handle_video(filename)
+			if f64Val < 0 {
+				f64Val, imghash = handle_image(filename)
+			}
 		case "jpeg":
 			fallthrough
 		case "jpg":

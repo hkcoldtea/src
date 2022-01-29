@@ -17,7 +17,7 @@ clarity_similarity [media files...]
 
 ## Known problems
 
-Currently, the media of GIF format does not work.
+Currently, the media of GIF format does not work. (Fixed. The workaround was simple and it seems to work fine.)
 
 ## License and Authors
 
